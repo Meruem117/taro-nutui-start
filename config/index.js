@@ -1,9 +1,9 @@
-import Components from 'unplugin-vue-components/webpack';
+import Components from 'unplugin-vue-components/webpack'
 
 const NutUIResolver = () => {
   return (name) => {
     if (name.startsWith('Nut')) {
-      const partialName = name.slice(3);
+      const partialName = name.slice(3)
       return {
         name: partialName,
         from: '@nutui/nutui-taro',
@@ -16,7 +16,7 @@ const NutUIResolver = () => {
 const config = {
   projectName: 'taro-nutui-start',
   date: '2023-2-18',
-  designWidth (input) {
+  designWidth(input) {
     if (input?.file?.replace(/\\+/g, '/').indexOf('@nutui') > -1) {
       return 375
     }
@@ -31,23 +31,22 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: ['@tarojs/plugin-html'],
-  defineConstants: {
-  },
+  defineConstants: {},
   copy: {
-    patterns: [
-    ],
-    options: {
-    }
+    patterns: [],
+    options: {}
   },
   framework: 'vue3',
   compiler: {
     type: 'webpack5',
-    prebundle: { enable: false }
-  }, 
+    prebundle: {
+      enable: false
+    }
+  },
   cache: {
     enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
   },
-  sass:{
+  sass: {
     data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`
   },
   mini: {
@@ -90,8 +89,7 @@ const config = {
     postcss: {
       autoprefixer: {
         enable: true,
-        config: {
-        }
+        config: {}
       },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
