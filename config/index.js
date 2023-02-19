@@ -86,6 +86,9 @@ const config = {
     publicPath: '/',
     staticDirectory: 'static',
     esnextModules: ['nutui-taro', 'icons-vue-taro'],
+    devServer: {
+      port: 3000
+    },
     postcss: {
       autoprefixer: {
         enable: true,
