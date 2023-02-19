@@ -87,6 +87,7 @@ const config = {
     staticDirectory: 'static',
     esnextModules: ['nutui-taro', 'icons-vue-taro'],
     devServer: {
+      host: 'localhost',
       port: 3000
     },
     postcss: {
